@@ -19,7 +19,10 @@ To evaluate an expression at the repl
 
 ## Goals
 
+Pull requests welcome!
+
 * Implement Hindley-Milner in Clojure (DONE!)
+* Learn and teach about type systems
 * Discover similarities between Lisp's meta-circular `eval` 
   and syntax-directed HM.
 
