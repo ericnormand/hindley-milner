@@ -40,7 +40,7 @@ Pull requests welcome!
 
 Copyright © 2014 Eric Normand
 
-Please see http://lispcast.com/Hindley-Milner-in-clojure for rationale.
+Please see http://lispcast.com/Hindley-Milner-in-Clojure for rationale.
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
