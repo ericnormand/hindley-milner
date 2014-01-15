@@ -37,4 +37,13 @@
 (deftest infer-type*-test
   (is (= [:Tuple :Integer :Boolean]
          (infer* tenv '(pair 1 false))))
+  (let [[_ [_] [_ [_ _ x] y]]
+        (infer* tenv '(fn [a]
+                        (let [x (fn [b]
+                                  (let [y (fn [c]
+                                            (a 1))]
+                                    (y 2)))]
+                          (x 3))))]
+    (is (not (nil? x)))
+    (is (= x y)))
   )

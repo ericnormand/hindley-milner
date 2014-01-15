@@ -50,7 +50,7 @@
       (reduce (fn [subst [t1 t2]]
                 (let [subst2 (unify (walk/postwalk-replace subst t1)
                                     (walk/postwalk-replace subst t2))]
-                  (compose-substitution subst subst2)))
+                  (compose-substitution subst2 subst)))
               {}
               (map vector ts1 ts2))))
 
@@ -110,12 +110,12 @@
              s1* (unify tv t1)
              [s2 t2] (infer-type (walk/postwalk-replace
                                   (compose-substitution s1 s1*) env*) body)]
-         [(compose-substitution s1 s2) t2])
+         [(compose-substitution s2 s1) t2])
        (let [[s1 t1] (infer-type env val)
              t* (generalize (walk/postwalk-replace s1 env) t1)
              env* (assoc env var t*)
              [s2 t2] (infer-type (walk/postwalk-replace s1 env*) body)]
-         [(compose-substitution s1 s2) t2])))))
+         [(compose-substitution s2 s1) t2])))))
 
 (def tenv {'zero? [:Lambda :Integer :Boolean]
            'if (forall [a]
