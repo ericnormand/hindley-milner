@@ -121,8 +121,7 @@
            'if (forall [a]
                        [:Lambda :Boolean
                         [:Lambda a
-                         [:Lambda a
-                          [:Lambda a]]]])
+                         [:Lambda a a]]])
            '+ [:Lambda :Integer
                [:Lambda :Integer :Integer]]
            '* [:Lambda :Integer
