@@ -4,3 +4,7 @@ pom.xml
 /classes/
 /targets/
 .lein-deps-sum
+/.lein-env
+/.lein-failures
+/.nrepl-port
+/target/
